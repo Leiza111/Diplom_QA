@@ -29,8 +29,9 @@ public class DataHelperSQL {
                 return null;
             }
         } catch (SQLException exception) {
-            throw new RuntimeException(exception);
+            exception.printStackTrace();
         }
+        return null;
     }
 
     public static String getPurchaseOnCreditCard() { //покупка в кредит
@@ -48,8 +49,9 @@ public class DataHelperSQL {
                 return null;
             }
         } catch (SQLException exception) {
-            throw new RuntimeException(exception);
+            exception.printStackTrace();
         }
+        return null;
     }
 
 
@@ -71,7 +73,7 @@ public class DataHelperSQL {
             prepareStatPayment.executeUpdate(payment);
 
         } catch (SQLException exception) {
-            throw new RuntimeException(exception);
+            exception.printStackTrace();
         }
 
     }

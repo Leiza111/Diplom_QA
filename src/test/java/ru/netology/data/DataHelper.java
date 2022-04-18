@@ -37,7 +37,7 @@ public class DataHelper {
         return faker.name().fullName();
     }
 
-    public static String getValidCvs() {
+    public static String getValidCvc() {
         return "111";
     }
 }

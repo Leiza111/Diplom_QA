@@ -14,6 +14,7 @@ import ru.netology.page.StartPage;
 
 import static com.codeborne.selenide.Selenide.open;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static ru.netology.data.DataHelperSQL.cleanDataBase;
 
 public class PaymentInCashTest {
     PaymentPage paymentPage = new PaymentPage();
@@ -21,7 +22,7 @@ public class PaymentInCashTest {
 
     @BeforeEach
     void CleanDataBaseAndOpenWeb() { //очистить базу данных и открыть веб страницу
-        DataHelperSQL.cleanDataBase();
+        cleanDataBase();
         startPage = open("http://localhost:8080", StartPage.class);
         startPage.buyPaymentByCard();
     }
@@ -43,11 +44,11 @@ public class PaymentInCashTest {
         val month = DataHelper.getValidMonth();
         val year = DataHelper.getValidYear();
         val owner = DataHelper.getValidOwner();
-        val cvs = DataHelper.getValidCvs();
-        paymentPage.fillOutLine(cardNumber, month, year, owner, cvs);
+        val cvc = DataHelper.getValidCvc();
+        paymentPage.fillOutLine(cardNumber, month, year, owner, cvc);
         paymentPage.messageAboutSuccessfulPayment();
         val expected = DataHelper.getStatusFirstCard(); //ОР-какое сообщение банка вывести
-        val actual = DataHelperSQL.getPurchaseByDebitCard(); //ФР-покупка дебитовой картой
+        val actual = DataHelperSQL.getPurchaseByDebitCard(); //ФР-покупка дебетовой картой
         assertEquals(expected, actual);
     }
 }
