@@ -29,6 +29,7 @@ public class DataHelper {
     public static String getValidMonth() {
         return "02";
     }
+
     public static String getValidYear() {
         return "25";
     }
@@ -40,4 +41,53 @@ public class DataHelper {
     public static String getValidCvc() {
         return "111";
     }
+
+    public static String getLetterЁ() {
+        return "Иванова Алёна";
+    }
+
+    public static String getDoubleNameOfTheOwner() {
+        return "Жан-Жак Руссо";
+    } // двойное имя
+
+    public static String getLessThan16DigitsInTheCard() {
+        return "1234 5678 9123 45";
+    }
+
+    public static String get16ZerosInTheCard() {
+        return "0000 0000 0000 0000";
+    }
+
+    public static String getLettersSymbolsText() {
+        return "трпd sf/* @&%,";
+    }
+
+    public static String getEmptyFieldInTheCard() {
+        return "";
+    }
+
+    public static String getLettersSymbolsTextInTheMonth() {
+        return "@&";
+    }
+
+    public static String getMonthNumberMore12() {
+        return "20";
+    }
+
+    public static String getMonthFieldEmpty() {
+        return "";
+    }
+
+    public static String getYearFieldPrevious() {
+        return "20";
+    }
+
+    public static String getMoreThan6YearsOfTheCurrentYear() {
+        return "28";
+    }
+
+    public static String getYearZero() {
+        return "00";
+    }
 }
+
