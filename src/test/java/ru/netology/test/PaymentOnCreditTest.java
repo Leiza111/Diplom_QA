@@ -92,7 +92,7 @@ public class PaymentOnCreditTest {
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getValidCvc();
         creditPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        creditPage.messageAboutSuccessfulPayment();
+        creditPage.messageAboutUnsuccessfulPaymentRefused();
         val expected = DataHelper.getStatusSecondCard(); //ОР-какое сообщение банка вывести
         val actual = DataHelperSQL.getPurchaseOnCreditCard(); //ФР-покупка дебетовой картой
         assertEquals(expected, actual);

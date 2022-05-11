@@ -92,7 +92,7 @@ public class PaymentInCashTest {
         val owner = DataHelper.getValidOwner();
         val cvc = DataHelper.getValidCvc();
         paymentPage.fillOutLine(cardNumber, month, year, owner, cvc);
-        paymentPage.messageAboutSuccessfulPayment();
+        paymentPage.messageAboutUnsuccessfulPaymentRefused();
         val expected = DataHelper.getStatusSecondCard(); //ОР-какое сообщение банка вывести
         val actual = DataHelperSQL.getPurchaseByDebitCard(); //ФР-покупка дебетовой картой
         assertEquals(expected, actual);
