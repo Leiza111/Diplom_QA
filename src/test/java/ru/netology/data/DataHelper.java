@@ -89,5 +89,43 @@ public class DataHelper {
     public static String getYearZero() {
         return "00";
     }
-}
 
+    public static String getLettersSymbolsTextInTheYear() {
+        return "@&";
+    }
+
+    public static String getYearFieldEmpty() {
+        return "";
+    }
+    public static String getOnNameOwnerly() {
+        return "Ivanov";
+    }
+
+    public static String getNameNndPatronymicWithSmallLetterInTheOwner() {
+        return "иванов геннадьевич";
+    }
+
+    public static String getMoreThan30CharactersInTheOwner() {
+        return "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa";
+    }
+
+    public static String getLettersSymbolsTextInTheOwner() {
+        return "@&";
+    }
+
+    public static String getOwnerFieldEmpty() {
+        return "";
+    }
+
+    public static String getCvcZero() {
+        return "00";
+    }
+
+    public static String getLettersSymbolsTextInTheCvc() {
+        return "@&";
+    }
+
+    public static String getCvcFieldEmpty() {
+        return "";
+    }
+}
