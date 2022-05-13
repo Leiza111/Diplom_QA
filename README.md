@@ -24,7 +24,7 @@
 
     для mySQL - ./gradlew test -Durl=jdbc:mysql://localhost:3306/app -Duser=app -Dpassword=pass ;
 
-    для postgresgl - ./gradlew test -Durl=jdbc:mysql://localhost:5432/app -Duser=app -Dpassword=pass ;
+    для postgresgl - ./gradlew test -Durl=jdbc:postgresql://localhost:5432/app -Duser=app -Dpassword=pass ;
 
 **7.** В новом терминале сформировать отчет командой 
     
