@@ -1,6 +1,7 @@
 package ru.netology.test;
 
 import com.codeborne.selenide.logevents.SelenideLogger;
+import io.qameta.allure.Description;
 import io.qameta.allure.selenide.AllureSelenide;
 import lombok.val;
 import org.junit.jupiter.api.AfterAll;
@@ -37,6 +38,7 @@ public class PaymentInCashTest {
         SelenideLogger.removeListener("allure");
     }
 
+    @Description
     //1. Позитивные сценарии
     //1.1_Позитивный тест с первой картой
     @Test
@@ -53,6 +55,7 @@ public class PaymentInCashTest {
         assertEquals(expected, actual);
     }
 
+    @Description
     //1.2_Позитивный тест с буквой Ё в имени владельца
     @Test
     void shouldApproveOwnerNameWithTheLetter() {
@@ -68,6 +71,7 @@ public class PaymentInCashTest {
         assertEquals(expected, actual);
     }
 
+    @Description
     //1.3_Позитивный тест с двойным именем владельца
     @Test
     void shouldApproveDoubleNameOfTheOwner() {
@@ -83,6 +87,7 @@ public class PaymentInCashTest {
         assertEquals(expected, actual);
     }
 
+    @Description
     //1.4_Позитивный тест со второй картой
     @Test
     void shouldApproveSecondCard() {
@@ -98,6 +103,7 @@ public class PaymentInCashTest {
         assertEquals(expected, actual);
     }
 
+    @Description
     //2. Негативные сценарии
     //2.1_Негативный тест с вводом номера карты, содержащую меньше 16 цифр
     @Test
@@ -111,6 +117,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutIncorrectDataFormat(); //сообщение которое должно быть
     }
 
+    @Description
     //2.2_Негативный тест с вводом номера карты, содержащее 16 нулей-оформить Баг
     @Test
     void should16ZerosInTheCard() { //следует ввести номер карты, содержащий 16 нулей
@@ -123,6 +130,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutUnsuccessfulPaymentRefused(); //сообщение которое должно быть
     }
 
+    @Description
   //2.3_Негативный тест с вводом номера карты, содержащий латинские буквы, арабскую вязь, иероглифы, спецсимволы (*, / . = - 0 ? и т.д.)
     @Test
     void shouldLettersSymbolsTextInTheCard() { //Следует ввести номер карты, содержащий латинские буквы, арабскую вязь, иероглифы, спецсимволы (*, / . = - 0 ? и т.д.)
@@ -135,6 +143,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutIncorrectDataFormat(); //сообщение которое должно быть
     }
 
+    @Description
     //2.4_Негативный тест с пустым полем карты
     @Test
     void shouldEmptyFieldInTheCard() { //следует поле карты оставить пустым
@@ -147,6 +156,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutIncorrectDataFormat(); //сообщение которое должно быть
     }
 
+    @Description
     //2.5_Негативный тест с вводом месяца, содержащего латинские буквы, арабскую вязь, иероглифы, спецсимволы (*, / . = - 0 ? и т.д.)
     @Test
     void shouldLettersSymbolsTextInTheMonth() { //Ввод месяца, содержащий латинские буквы, арабскую вязь, иероглифы, спецсимволы (*, / . = - 0 ? и т.д.)
@@ -159,6 +169,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutIncorrectDataFormat(); //сообщение которое должно быть
     }
 
+    @Description
     //2.6_Негативный тест с вводом месяца больше 12
     @Test
     void shouldMonthNumberMore12() { //ввод месяца больше 12
@@ -171,6 +182,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutIncorrectCardExpirationDate(); //сообщение которое должно быть
     }
 
+    @Description
     //2.7_Негативный тест с пустым полем месяца
     @Test
     void shouldMonthFieldEmpty() { //пустой месяц
@@ -183,6 +195,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutIncorrectDataFormat(); //сообщение которое должно быть
     }
 
+    @Description
     //2.8_Негативный тест с предыдущим годом
     @Test
     void shouldYearFieldPrevious() { //предыдущий год
@@ -195,6 +208,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutCardExpiration(); //сообщение которое должно быть
     }
 
+    @Description
     //2.9_Негативный тест в поле "Год" ввести год на 6 лет больше текущего года
     @Test
     void shouldYearMoreThan6YearsOfTheCurrentYear() { //в поле "Год" ввести год на 6 лет больше текущего года
@@ -207,6 +221,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutIncorrectCardExpirationDate(); //сообщение которое должно быть
     }
 
+    @Description
     //2.10_Негативный тест в поле "Год" ввести нулевой год
     @Test
     void shouldYearZero() { //в поле "Год" ввести нулевой год
@@ -219,6 +234,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutCardExpiration(); //сообщение которое должно быть
     }
 
+    @Description
     //2.11_Негативный тест в поле "Год" ввести латинские буквы, арабскую вязь, иероглифы, спецсимволы (*, / . = - 0 ? и т.д.)
     @Test
     void shouldLettersSymbolsTextInTheYear() { //В поле "Год" ввести латинские буквы, арабскую вязь, иероглифы, спецсимволы (*, / . = - 0 ? и т.д.)
@@ -231,6 +247,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutIncorrectDataFormat(); //сообщение которое должно быть
     }
 
+    @Description
     //2.12_Негативный тест поле "Год" оставить пустым
     @Test
     void shouldYearFieldEmpty() { //поле "Год" оставить пустым
@@ -243,6 +260,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutIncorrectDataFormat(); //сообщение которое должно быть
     }
 
+    @Description
     //2.13_Негативный тест поле "Владелец" ввести только имя, либо только фамилию, либо только отчество латинскими буквами
     @Test
     void shouldOnlyNameOwner() { //в поле "Владелец" ввести только имя, либо только фамилию, либо только отчество латинскими буквами
@@ -255,6 +273,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutSuccessfulPayment(); //сообщение которое должно быть
     }
 
+    @Description
     //2.14_Негативный тест в поле "Владелец" ввести только имя фамилию и отчество с маленькой буквы
     @Test
     void shouldNameNndPatronymicWithSmallLetterInTheOwner() { //в поле "Владелец" ввести только имя фамилию и отчество с маленькой буквы
@@ -267,6 +286,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutSuccessfulPayment(); //сообщение которое должно быть
     }
 
+    @Description
     //2.15_Негативный тест в поле "Владелец" ввести более 30 символов
     @Test
     void shouldMoreThan30CharactersInTheOwner() { //в поле "Владелец" ввести только имя фамилию и отчество с маленькой буквы
@@ -279,6 +299,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutSuccessfulPayment(); //сообщение которое должно быть
     }
 
+    @Description
     //2.16_Негативный тест в поле "Владелец" ввести латинские буквы, арабскую вязь, иероглифы, спецсимволы (*, / . = - 0 ? и т.д.)
     @Test
     void shouldLettersSymbolsTextInTheOwner() { //В поле "Владелец" ввести латинские буквы, арабскую вязь, иероглифы, спецсимволы (*, / . = - 0 ? и т.д.)
@@ -291,6 +312,7 @@ public class PaymentInCashTest {
         paymentPage.messageAboutSuccessfulPayment(); //сообщение которое должно быть
     }
 
+    @Description
     //2.17_Негативный тест с пустым полем владельца
     @Test
     void shouldOwnerFieldEmpty() { //поле "Год" оставить пустым
@@ -303,8 +325,9 @@ public class PaymentInCashTest {
         paymentPage.messageAboutTheMandatoryFillingInOfTheField(); //сообщение которое должно быть
     }
 
+    @Description
     //2.18_Негативный тест с нулевым полем CVC
-    // @Test
+    @Test
     void shouldCvcZero() { //поле "Cvc" ввести нули
         val cardNumber = DataHelper.getFirstCardNumber();
         val month = DataHelper.getValidMonth(); //
@@ -315,8 +338,9 @@ public class PaymentInCashTest {
         paymentPage.messageAboutSuccessfulPayment(); //сообщение которое должно быть
     }
 
+    @Description
     //2.19_Негативный тест в поле "Cvc" ввести латинские буквы, арабскую вязь, иероглифы, спецсимволы (*, / . = - 0 ? и т.д.)
-    // @Test
+    @Test
     void shouldLettersSymbolsTextInTheCvc() { //В поле "Cvc" ввести латинские буквы, арабскую вязь, иероглифы, спецсимволы (*, / . = - 0 ? и т.д.)
         val cardNumber = DataHelper.getFirstCardNumber();
         val month = DataHelper.getValidMonth(); //
@@ -327,8 +351,9 @@ public class PaymentInCashTest {
         paymentPage.messageAboutIncorrectDataFormat(); //сообщение которое должно быть
     }
 
+    @Description
     //2.20_Негативный тест с пустым полем Cvc
-    // @Test
+    @Test
     void shouldEmptyFieldInTheCvc() { //следует поле Cvc оставить пустым
         val cardNumber = DataHelper.getFirstCardNumber();
         val month = DataHelper.getValidMonth(); //

@@ -20,13 +20,13 @@
 
 **5.** Открыть браузер и пройти по [ссылке](http://localhost:8080/) ;
 
-**5.** В новом терминале запустить тесты
+**6.** В новом терминале запустить тесты
 
-    для mySQL - ./gradlew test -url=jdbc:mysql://localhost:3306/app -user=app -password=pass
+    для mySQL - ./gradlew test -Durl=jdbc:mysql://localhost:3306/app -Duser=app -Dpassword=pass ;
 
-    для postgresgl - ./gradlew test -url=jdbc:mysql://localhost:5432/app -user=app -password=pass ;
+    для postgresgl - ./gradlew test -Durl=jdbc:mysql://localhost:5432/app -Duser=app -Dpassword=pass ;
 
-**6.** В новом терминале сформировать отчет командой 
+**7.** В новом терминале сформировать отчет командой 
     
     ./gradlew allureServe .
 
